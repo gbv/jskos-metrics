@@ -3,7 +3,17 @@
 
 DIR=$(dirname "$(readlink -f "$0")")
 
-. $DIR/arguments.sh
+if [ "$#" -ne 1 ]; then
+  echo "Bitte nur ein Argument angeben"
+  exit  
+fi
+
+FILE=$1
+
+if [ ! -f "$FILE" ]; then
+  echo "Datei '$FILE' existiert nicht"
+  exit
+fi
 
 echo "<< Anzahl der Konzepte >>"
 . $DIR/conceptNumber.sh
