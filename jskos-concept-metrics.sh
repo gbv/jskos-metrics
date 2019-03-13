@@ -1,26 +1,27 @@
 #!/bin/bash
 # Main-Skript
-# Zu untersuchende Dateien in den Ordner "Skripte" mitreinpacken !!!
 
-. arguments.sh
+DIR=$(dirname "$(readlink -f "$0")")
+
+. $DIR/arguments.sh
 
 echo "<< Anzahl der Konzepte >>"
-. conceptNumber.sh
+. $DIR/conceptNumber.sh
 
 #echo "<< Anzahl der Beziehungen >>"
 #. relationNumber.sh
 
 echo "<< Broader-Verteilung >>"
-. broaderDistribution.sh
+. $DIR/broaderDistribution.sh
 
 echo "<< Narrower-Verteilung >>"
-. narrowerDistribution.sh
+. $DIR/narrowerDistribution.sh
 
 echo "<< Narrower-Verteilung-Implizit >>"
-. narrowerDistributionImplicit.sh
+. $DIR/narrowerDistributionImplicit.sh
 
 echo "<< Top-Konzepte >>"
-. topConceptOf.sh
+. $DIR/topConceptOf.sh
 
 echo "<< Typ-Verteilung >>"
-. typeDistribution.sh
+. $DIR/typeDistribution.sh
