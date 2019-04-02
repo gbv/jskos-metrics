@@ -13,8 +13,10 @@ Each metrics can be calculated with a script of its own. Main script
 concept scheme. Example:
 
 ~~~
-./jskos-concept-metrics.sh concepts.ndjson
+./jskos-concept-metrics.sh concepts.ndjson | jq
 ~~~
+
+jq is needed for pretty-printing
 
 ## Related work
 

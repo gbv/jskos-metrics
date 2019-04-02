@@ -15,23 +15,37 @@ if [ ! -f "$FILE" ]; then
   exit
 fi
 
-echo "<< Anzahl der Konzepte >>"
-. $DIR/conceptNumber.sh
+function historows() {
+  perl -lanE 'say "$l," if $l; $l="\"$F[1]\": $F[0]"; END {say $l}'
+}
+
+echo "{"
+
+echo -n "\"conceptNumber\": "
+. $DIR/conceptNumber.sh 
+echo ","
 
 #echo "<< Anzahl der Beziehungen >>"
 #. relationNumber.sh
 
-echo "<< Broader-Verteilung >>"
-. $DIR/broaderDistribution.sh
+echo "\"broaderDistribution\": {"
+. $DIR/broaderDistribution.sh | historows
+echo "},"
 
-echo "<< Narrower-Verteilung >>"
-. $DIR/narrowerDistribution.sh
+echo "\"narrowerDistribution\": {"
+. $DIR/narrowerDistribution.sh | historows
+echo "},"
 
-echo "<< Narrower-Verteilung-Implizit >>"
-. $DIR/narrowerDistributionImplicit.sh
+echo "\"narrowerDistributionImplicit\": {"
+. $DIR/narrowerDistributionImplicit.sh | historows
+echo "},"
 
-echo "<< Top-Konzepte >>"
+echo -n "\"topConceptNumber\": "
 . $DIR/topConceptOf.sh
+echo ","
 
-echo "<< Typ-Verteilung >>"
-. $DIR/typeDistribution.sh
+echo "\"typesDistribution\": {"
+. $DIR/typeDistribution.sh | historows
+echo "}"
+
+echo "}"
