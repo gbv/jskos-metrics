@@ -11,9 +11,20 @@
 
 Each metrics can be calculated with a script of its own. Each subdirectory has a main script that executes its scripts and emits a JSON file.
 
-* `scheme/scheme-metrics.sh` - concept scheme metrics
+* `scheme/scheme-metrics.sh` - concept scheme metrics, main script
 
-## Example
+### JSON format
+
+The JSON statistics file contains the following keys:
+
+* `conceptNumber` - the number of concepts in a classification
+* `broaderDistribution` - histogramm of number of broader Terms
+* `narrowerDistribution` - histogramm of number of narrower terms
+* `narrowerDistributionImplicit` - histogramm of number of narrower terms, references broaderDistribution for Values
+* `topConceptOf` - the number the top concepts, hierarchy 0, of a classification
+* `typeDistribution` - lists the occurences of types, here: URIs
+
+### Example
 
 ~~~
 ./scheme/scheme-metrics.sh concepts.ndjson | jq
