@@ -5,18 +5,21 @@
 ## Dependencies
 
 * [jq](https://stedolan.github.io/jq/)
+* Standard Linux command line tools (bash, sort, uniq, system perl...)
 
 ## Usage
 
-Each metrics can be calculated with a script of its own. Main script
-`jskos-concept-metrics.sh` runs all metrics for a set of concepts of one
-concept scheme. Example:
+Each metrics can be calculated with a script of its own. Each subdirectory has a main script that executes its scripts and emits a JSON file.
+
+* `scheme/scheme-metrics.sh` - concept scheme metrics
+
+## Example
 
 ~~~
-./jskos-concept-metrics.sh concepts.ndjson | jq
+./scheme/scheme-metrics.sh concepts.ndjson | jq
 ~~~
 
-jq is needed for pretty-printing
+In this case jq is only needed for pretty-printing.
 
 ## Related work
 
@@ -30,7 +33,8 @@ KOS metrics have best been summarized by Stock (2015).
 
 Consistency checks of KOS have been implemented by
 
-* [Skosify](Thesaurus evaluation)
-* ...
+* [Skosify](http://demo.seco.tkk.fi/skosify/skosify)
 
-*Some more background information can be found [in the internal GBV wiki](https://info.gbv.de/pages/viewpage.action?spaceKey=COLIBRI&title=KOS-Statistik).*
+---
+
+*Some more background information can be found [in the internal GBV wiki](https://info.gbv.de/pages/viewpage.action?spaceKey=COLIBRI&title=KOS-Statistik). We are going to also make public this drafts.*

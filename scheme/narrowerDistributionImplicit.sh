@@ -6,5 +6,3 @@
  
 cat $FILE | jq -r .broader[].uri 2> /dev/null | sort | uniq -c | sort -n \
   | awk '{print $1}' | sort | uniq -c | sort -n -k2
-
-

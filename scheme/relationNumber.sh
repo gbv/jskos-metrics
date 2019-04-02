@@ -4,5 +4,3 @@
 # Die Ergebnisse werden zusammengezählt. Die Ergebnisse werden sortiert. 
 
 cat $FILE | jq -r .broader[].uri | sort | uniq -c | sort -n 
-
-

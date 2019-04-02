@@ -1,17 +1,16 @@
 #!/bin/bash
-# Main-Skript
 
 DIR=$(dirname "$(readlink -f "$0")")
 
 if [ "$#" -ne 1 ]; then
-  echo "Bitte nur ein Argument angeben"
+  echo "Please provide exactely one argument"
   exit  
 fi
 
 FILE=$1
 
 if [ ! -f "$FILE" ]; then
-  echo "Datei '$FILE' existiert nicht"
+  echo "File not found: $FILE"
   exit
 fi
 
