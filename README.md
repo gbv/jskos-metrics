@@ -25,6 +25,7 @@ The concept-metrics file contains the following keys:
 * `narrowerDistributionImplicit` - histogramm of number of narrower terms, references broaderDistribution for Values
 * `topConceptOf` - the number the top concepts, hierarchy 0, of a classification
 * `typeDistribution` - lists the occurences of types, here: URIs
+* `levelDistribution` - number of concepts per hierarchy level
 
 
 ### Examples

@@ -43,6 +43,10 @@ echo -n "\"topConceptNumber\": "
 . $DIR/topConceptOf.sh
 echo ","
 
+echo -n "\"levelDistribution\": "
+$DIR/levelDistribution.pl <(jq -c '{uri,broader}' "$FILE")
+echo ","
+
 echo "\"typesDistribution\": {"
 . $DIR/typeDistribution.sh | historows
 echo "}"
