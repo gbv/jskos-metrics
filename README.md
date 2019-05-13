@@ -19,29 +19,29 @@ Each metrics can be calculated with a script of its own. Each subdirectory has a
 
 The scheme-metrics file contains the following keys:
 
-* `conceptNumber` - the number of concepts in a classification
-* `broaderDistribution` - histogramm of number of broader Terms
+* `conceptNumber` - total number of concepts
+* `broaderDistribution` - histogram of number of broader terms
 * `narrowerDistribution` - histogramm of number of narrower terms
 * `narrowerDistributionImplicit` - histogramm of number of narrower terms, references broaderDistribution for Values
-* `topConceptOf` - the number the top concepts, hierarchy 0, of a classification
-* `typeDistribution` - lists the occurences of types, here: URIs
-* `levelDistribution` - number of concepts per hierarchy level
+* `topConceptOf` - number the top concepts
+* `typeDistribution` - histogram of concept type URIs
+* `levelDistribution` - histogram of concepts per hierarchy level
 
 The mapping-metrics file contains the following keys:
-* `keys` - the number of every unique key
-* `fromSchemeDistribution` - histogramm of unique URIs from the scheme's origin
-* `toSchemeDistribution` - histogramm of unique URIs from the scheme's target
-* `typeDistribution` - number of unique types
-* `creatorNames` - number of unique creator names
-* `creatorNumber` - histogramm of contents of the "creator" field
+
+* `keys` - histogram of JSKOS field names
+* `fromSchemeDistribution` - histogram of source scheme URIs
+* `toSchemeDistribution` - histogram of target scheme URIs
+* `typeDistribution` - histogram mapping type URIs
+* `creatorNames` - histogram of creator names
+* `creatorNumber` - histogram of number of creators per mapping
 * `createdPerDay` - number of mappings created per day
 * `modifiedPerDay` - number of mappings modified per day
-* `fromNumber` - number of contents of the "from" field
-* `toNumber` - number of contents of the "to" field
-* `fromConceptsCount` - number of from concepts
-* `toConceptsCount` - number of to concepts
-* `mappingURICount` - number of all URIs
-
+* `fromNumber` - histogram of number of source concepts
+* `toNumber` -  histogram of number of target concepts
+* `fromConceptsCount` - number of distinct source concepts
+* `toConceptsCount` - number of distinct target concepts
+* `mappingURICount` - number of mapping uris
 
 ### Examples
 
