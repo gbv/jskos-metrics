@@ -28,19 +28,19 @@ The scheme-metrics file contains the following keys:
 * `levelDistribution` - number of concepts per hierarchy level
 
 The mapping-metrics file contains the following keys:
-* `keys` - every unique key
-* `fromSchemeDistribution` - 
-* `toSchemeDistribution`
-* `typeDistribution`
-* `creatorNames`
-* `creatorNumber`
-* `createdPerDay`
-* `modifiedPerDay`
-* `fromNumber`
-* `toNumber`
-* `fromConceptsCount`
-* `toConceptsCount`
-* `mappingURICount`
+* `keys` - the number of every unique key
+* `fromSchemeDistribution` - number of unique URIs from the scheme's origin
+* `toSchemeDistribution` - number of unique URIs from the scheme's target
+* `typeDistribution` - number of unique types
+* `creatorNames` - number of unique creator names
+* `creatorNumber` - number of contents of the "creator" field
+* `createdPerDay` - number of mappings created per day
+* `modifiedPerDay` - number of mappings modified per day
+* `fromNumber` - number of contents of the "from" field
+* `toNumber` - number of contents of the "to" field
+* `fromConceptsCount` - number of from concepts
+* `toConceptsCount` - number of to concepts
+* `mappingURICount` - number of all URIs
 
 
 ### Examples
