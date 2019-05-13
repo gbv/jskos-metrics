@@ -17,7 +17,7 @@ Each metrics can be calculated with a script of its own. Each subdirectory has a
 
 ### JSON format
 
-The concept-metrics file contains the following keys:
+The scheme-metrics file contains the following keys:
 
 * `conceptNumber` - the number of concepts in a classification
 * `broaderDistribution` - histogramm of number of broader Terms
@@ -26,6 +26,21 @@ The concept-metrics file contains the following keys:
 * `topConceptOf` - the number the top concepts, hierarchy 0, of a classification
 * `typeDistribution` - lists the occurences of types, here: URIs
 * `levelDistribution` - number of concepts per hierarchy level
+
+The mapping-metrics file contains the following keys:
+* `keys` - every unique key
+* `fromSchemeDistribution` - 
+* `toSchemeDistribution`
+* `typeDistribution`
+* `creatorNames`
+* `creatorNumber`
+* `createdPerDay`
+* `modifiedPerDay`
+* `fromNumber`
+* `toNumber`
+* `fromConceptsCount`
+* `toConceptsCount`
+* `mappingURICount`
 
 
 ### Examples
