@@ -29,11 +29,11 @@ The scheme-metrics file contains the following keys:
 
 The mapping-metrics file contains the following keys:
 * `keys` - the number of every unique key
-* `fromSchemeDistribution` - number of unique URIs from the scheme's origin
-* `toSchemeDistribution` - number of unique URIs from the scheme's target
+* `fromSchemeDistribution` - histogramm of unique URIs from the scheme's origin
+* `toSchemeDistribution` - histogramm of unique URIs from the scheme's target
 * `typeDistribution` - number of unique types
 * `creatorNames` - number of unique creator names
-* `creatorNumber` - number of contents of the "creator" field
+* `creatorNumber` - histogramm of contents of the "creator" field
 * `createdPerDay` - number of mappings created per day
 * `modifiedPerDay` - number of mappings modified per day
 * `fromNumber` - number of contents of the "from" field
