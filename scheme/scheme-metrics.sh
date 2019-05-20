@@ -21,34 +21,34 @@ function historows() {
 echo "{"
 
 echo -n "\"conceptNumber\": "
-. $DIR/conceptNumber.sh 
+$DIR/conceptNumber.sh "$FILE" 
 echo ","
 
 #echo "<< Anzahl der Beziehungen >>"
 #. relationNumber.sh
 
 echo "\"broaderDistribution\": {"
-. $DIR/broaderDistribution.sh | historows
+$DIR/broaderDistribution.sh "$FILE"| historows
 echo "},"
 
 echo "\"narrowerDistribution\": {"
-. $DIR/narrowerDistribution.sh | historows
+$DIR/narrowerDistribution.sh "$FILE"  | historows
 echo "},"
 
 echo "\"narrowerDistributionImplicit\": {"
-. $DIR/narrowerDistributionImplicit.sh | historows
+$DIR/narrowerDistributionImplicit.sh "$FILE" | historows
 echo "},"
 
 echo -n "\"topConceptNumber\": "
-. $DIR/topConceptOf.sh
+$DIR/topConceptOf.sh "$FILE"
 echo ","
 
 echo -n "\"levelDistribution\": "
-$DIR/levelDistribution.pl <(jq -c '{uri,broader}' "$FILE")
+$DIR/levelDistribution.pl "$FILE" <(jq -c '{uri,broader}' "$FILE")
 echo ","
 
 echo "\"typesDistribution\": {"
-. $DIR/typeDistribution.sh | historows
+$DIR/typeDistribution.sh "$FILE" | historows
 echo "}"
 
 echo "}"

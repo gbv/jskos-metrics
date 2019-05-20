@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat $FILE | wc -l 
+cat "$1" | wc -l

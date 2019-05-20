@@ -4,5 +4,5 @@
 # Objekte fallen weg).
 # Wie oft kommen wie viele Unterklassen vor 
  
-cat $FILE | jq -r .broader[].uri 2> /dev/null | sort | uniq -c | sort -n \
+jq -r .broader[].uri "$1" 2> /dev/null | sort | uniq -c | sort -n \
   | awk '{print $1}' | sort | uniq -c | sort -n -k2
