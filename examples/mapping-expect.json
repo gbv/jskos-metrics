@@ -1,0 +1,54 @@
+{
+  "keys": {
+    "created": 3,
+    "creator": 4,
+    "from": 4,
+    "fromScheme": 4,
+    "identifier": 4,
+    "modified": 1,
+    "to": 4,
+    "toScheme": 4,
+    "type": 4,
+    "uri": 3
+  },
+  "fromSchemeDistribution": {
+    "http://bartoc.org/en/node/1940": 1,
+    "http://dewey.info/scheme/edition/e23/": 2,
+    "http://uri.gbv.de/terminology/bk/": 1
+  },
+  "toSchemeDistribution": {
+    "http://bartoc.org/en/node/1940": 1,
+    "http://uri.gbv.de/terminology/bk/": 2,
+    "http://uri.gbv.de/terminology/rvk/": 1
+  },
+  "typeDistribution": {
+    "http://www.w3.org/2004/02/skos/core#closeMatch": 1,
+    "http://www.w3.org/2004/02/skos/core#mappingRelation": 3
+  },
+  "creatorNames": {
+    "Dennis Tobola": 2,
+    "Jakob Voß": 1,
+    "TUB Hamburg-Harburg": 1
+  },
+  "creatorNumber": {
+    "1": 4
+  },
+  "createdPerDay": {
+    "2019-01-30": 1,
+    "2019-05-27": 2,
+    "null": 1
+  },
+  "modifiedPerDay": {
+    "2019-01-30": 1,
+    "null": 3
+  },
+  "fromNumber": {
+    "1": 4
+  },
+  "toNumber": {
+    "1": 4
+  },
+  "fromConceptsCount": 4,
+  "topConceptsCount": 3,
+  "mappingURICount": 4
+}
