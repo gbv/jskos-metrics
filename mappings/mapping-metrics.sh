@@ -8,59 +8,78 @@ if [ ! -f "$FILE" ]; then
   exit
 fi
 
-echo "mapping statistics:"
+function historows() {
+  perl -lanE 'say "$l," if $l; $n=shift @F; $l="\"@F\": $n"; END {say $l}'
+}
+
+echo "{"
 
 echo ""
-echo "keys:"
-jq -r 'keys[]' $FILE | sort | uniq -c
+echo "\"keys\": {"
+jq -r 'keys[]' "$FILE" | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "fromSchemeDistribution:"
-jq -r .fromScheme.uri $FILE | sort | uniq -c 
+echo "\"fromSchemeDistribution\": {"
+jq -r '.fromScheme.uri' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "toSchemeDistribution:"
-jq -r .toScheme.uri $FILE | sort | uniq -c 
+echo "\"toSchemeDistribution\": {"
+jq -r '.toScheme.uri' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "typeDistribution:"
-jq -r ".type[]?" $FILE | sort | uniq -c 
+echo "\"typeDistribution\": {"
+jq -r ".type[]?" $FILE | sort | uniq -c | historows
 COUNT=$(jq -c 'select(.type|length<1)' $FILE | wc -l)
-echo "$COUNT null"
+# echo "$COUNT null"
+echo "},"
 
 echo ""
-echo "creatorNames:"
-jq -r '.creator[]?.prefLabel|to_entries[].value' $FILE | sort | uniq -c 
+echo "\"creatorNames\": {"
+jq -r '.creator[]?.prefLabel|to_entries[].value' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "creatorNumber:"
-jq -r '.creator|length' $FILE | sort | uniq -c
+echo "\"creatorNumber\": {"
+jq -r '.creator|length' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo "" 
-echo "createdPerDay:"
-jq -r '.created[0:10]' $FILE | sort | uniq -c 
+echo "\"createdPerDay\": {"
+jq -r '.created[0:10]' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "modifiedPerDay:"
-jq -r '.modified[0:10]' $FILE | sort | uniq -c 
+echo "\"modifiedPerDay\": {"
+jq -r '.modified[0:10]' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "fromNumber:"
-jq -r '.from.memberSet|length' $FILE | sort | uniq -c
+echo "\"fromNumber\": {"
+jq -r '.from.memberSet|length' $FILE | sort | uniq -c | historows
+echo "},"
 
 echo ""
-echo "toNumber:"
-jq -r '.to.memberSet|length' $FILE | sort | uniq -c
+echo "\"toNumber\": {"
+jq -r '.to.memberSet|length' $FILE | sort | uniq -c | historows
+echo "},"
+
 
 echo ""
-echo "fromConceptsCount:"
-jq -r '.from.memberSet[].uri' $FILE | sort | uniq -c | wc -l
+echo "\"fromConceptsCount\": "
+jq '.from.memberSet[].uri' $FILE | sort | uniq -c | wc -l
+echo ","
 
 echo ""
-echo "toConceptsCount:"
+echo "\"topConceptsCount\":"
 jq -r '.to.memberSet[].uri' $FILE | sort | uniq -c | wc -l
+echo ","
 
 echo ""
-echo "mappingURICount: "
-jq -r .uri $FILE | wc -l
+echo "\"mappingURICount\":"
+jq -r '.uri' $FILE | wc -l
+echo ""
 
+echo "}"

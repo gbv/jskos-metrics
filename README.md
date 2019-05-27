@@ -50,9 +50,9 @@ The mapping-metrics file contains the following keys:
 Directory `examples` contains sample files which are also used for testing.
 
 ~~~
-./concepts/concept-metrics.sh examples/concepts.ndjson | jq
+./concepts/concept-metrics.sh examples/concept-expect.json | jq
 
-./mappings/mapping-metrics.sh mapping.ndjson
+./mappings/mapping-metrics.sh examples/mapping-expect.json
 ~~~
 
 In this case jq is only needed for pretty-printing.

@@ -28,11 +28,11 @@ echo ","
 #. relationNumber.sh
 
 echo "\"broaderDistribution\": {"
-$DIR/broaderDistribution.sh "$FILE"| historows
+$DIR/broaderDistribution.sh "$FILE" | historows
 echo "},"
 
 echo "\"narrowerDistribution\": {"
-$DIR/narrowerDistribution.sh "$FILE"  | historows
+$DIR/narrowerDistribution.sh "$FILE" | historows
 echo "},"
 
 echo "\"narrowerDistributionImplicit\": {"
