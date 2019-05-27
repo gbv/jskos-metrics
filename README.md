@@ -1,5 +1,8 @@
 # jskos-metrics
 
+[![Build Status](https://travis-ci.org/gbv/jskos-metrics.svg?branch=master)](https://travis-ci.org/gbv/jskos-metrics)
+[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
+
 > Scripts to create statistical analysis of JSKOS data
 
 ## Dependencies
