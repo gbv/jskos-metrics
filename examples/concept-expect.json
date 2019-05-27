@@ -1,4 +1,12 @@
 {
+  "keys": {
+    "broader": 7,
+	"inScheme": 10,
+	"notation": 10,
+	"prefLabel": 10,
+	"topConceptOf": 3,
+	"uri": 10
+  },  
   "conceptNumber": 10,
   "broaderDistribution": {
     "0": 3,

@@ -20,6 +20,11 @@ function historows() {
 
 echo "{"
 
+echo ""
+echo "\"keys\": {"
+jq -r 'keys[]' "$FILE" | sort | uniq -c | historows
+echo "},"
+
 echo -n "\"conceptNumber\": "
 $DIR/conceptNumber.sh "$FILE" 
 echo ","
