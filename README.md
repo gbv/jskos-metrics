@@ -52,7 +52,7 @@ Directory `examples` contains sample files which are also used for testing.
 ~~~
 ./concepts/concept-metrics.sh examples/concept-expect.json | jq
 
-./mappings/mapping-metrics.sh examples/mapping-expect.json
+./mappings/mapping-metrics.sh examples/mapping-expect.json | jq
 ~~~
 
 In this case jq is only needed for pretty-printing.
