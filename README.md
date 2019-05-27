@@ -11,13 +11,13 @@
 
 Each metrics can be calculated with a script of its own. Each subdirectory has a main script that executes its scripts and emits a JSON file.
 
-* `scheme/scheme-metrics.sh` - concept scheme metrics, main script
+* `concepts/concept-metrics.sh` - concept scheme metrics, main script
 
 * `mappings/mapping-metrics.sh` - mapping metrics, main script
 
 ### JSON format
 
-The scheme-metrics file contains the following keys:
+The concept-metrics file contains the following keys:
 
 * `conceptNumber` - total number of concepts
 * `broaderDistribution` - histogram of number of broader terms
@@ -46,7 +46,7 @@ The mapping-metrics file contains the following keys:
 ### Examples
 
 ~~~
-./scheme/scheme-metrics.sh concepts.ndjson | jq
+./concepts/concept-metrics.sh concepts.ndjson | jq
 
 ./mappings/mapping-metrics.sh mapping.ndjson
 ~~~
