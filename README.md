@@ -15,6 +15,8 @@ Each metrics can be calculated with a script of its own. Each subdirectory has a
 
 * `mappings/mapping-metrics.sh` - mapping metrics, main script
 
+Directory `examples` contains sample JSKOS data and expected metric results to test the metric scripts. Call `make` to run the tests.
+
 ### JSON format
 
 The concept-metrics file contains the following keys:
@@ -45,8 +47,10 @@ The mapping-metrics file contains the following keys:
 
 ### Examples
 
+Directory `examples` contains sample files which are also used for testing.
+
 ~~~
-./concepts/concept-metrics.sh concepts.ndjson | jq
+./concepts/concept-metrics.sh examples/concepts.ndjson | jq
 
 ./mappings/mapping-metrics.sh mapping.ndjson
 ~~~
