@@ -24,6 +24,7 @@ Directory `examples` contains sample JSKOS data and expected metric results to t
 
 The concept-metrics file contains the following keys:
 
+* `keys` - histogram of JSKOS field names
 * `conceptNumber` - total number of concepts
 * `broaderDistribution` - histogram of number of broader terms
 * `narrowerDistribution` - histogramm of number of narrower terms
