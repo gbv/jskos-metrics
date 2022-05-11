@@ -1,6 +1,6 @@
 # jskos-metrics
 
-[![Build Status](https://travis-ci.org/gbv/jskos-metrics.svg?branch=master)](https://travis-ci.org/gbv/jskos-metrics)
+[![Build Status](https://travis-ci.org/gbv/jskos-metrics.svg?branch=main)](https://travis-ci.org/gbv/jskos-metrics)
 [![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
 
 > Scripts to create statistical analysis of JSKOS data
@@ -84,3 +84,8 @@ Consistency checks of KOS have been implemented by
 ---
 
 *Some more background information can be found [in the internal GBV wiki](https://info.gbv.de/pages/viewpage.action?spaceKey=COLIBRI&title=KOS-Statistik). We are going to also make public this drafts.*
+
+## License
+
+This scripts can be used without any restrictions (CC Zero).
+
