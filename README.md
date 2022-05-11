@@ -1,6 +1,6 @@
 # jskos-metrics
 
-[![Build Status](https://travis-ci.org/gbv/jskos-metrics.svg?branch=main)](https://travis-ci.org/gbv/jskos-metrics)
+[![Makefile CI](https://github.com/gbv/jskos-metrics/actions/workflows/test.yml/badge.svg)](https://github.com/gbv/jskos-metrics/actions/workflows/test.yml)
 [![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
 
 > Scripts to create statistical analysis of JSKOS data
