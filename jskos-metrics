@@ -1,0 +1,38 @@
+#!/bin/bash -e
+
+SOURCE=${BASH_SOURCE[0]}
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
+usage() {
+  echo "
+Usage: $0 concepts|mappings file.ndjson
+
+Examples:
+
+  jskos-metrics concepts examples/concepts.ndjson
+  jskos-metrics mappings examples/mappings.ndjson
+"
+    exit 1
+}
+
+if [ "$#" -ne 2 ]; then
+  usage
+fi
+
+if [ ! -f "$2" ]; then
+  echo "File not found: $2"
+  exit 1
+fi
+
+if [ "$1" == "concepts" ]; then
+  "$DIR"/concepts/concept-metrics.sh "$2" | jq
+elif [ "$1" == "mappings" ]; then
+  "$DIR"/mappings/mapping-metrics.sh "$2" | jq
+else
+  usage
+fi

@@ -5,24 +5,24 @@
 
 > Scripts to create statistical analysis of JSKOS data
 
-## Dependencies
+## Installation
 
-* [jq](https://stedolan.github.io/jq/)
-* Standard Linux command line tools (bash, sort, uniq, system perl...)
+You need to clone the repository or copy its content to a local directory.
+
+The scripts require [jq](https://stedolan.github.io/jq/) and standard Unix command line tools (bash, sort, uniq, perl...).
+
+To call the main script `jskos-metrics` from anywhere, add a symlink from a directory in your PATH, e.g.:
+
+~~~sh
+cd ~/.local/bin/
+ln -s $DIRECTORY_OF_JSKOS_METRICS/jskos-metrics jskos-metrics
+~~~
 
 ## Usage
 
-Each metrics can be calculated with a script of its own. Each subdirectory has a main script that executes its scripts and emits a JSON file.
+Run script `./jskos-metrics` with a item type (`concepts` or `mappings`) and a `.ndjson` file. On success the statistics are emitted in JSON format:
 
-* `concepts/concept-metrics.sh` - concept scheme metrics, main script
-
-* `mappings/mapping-metrics.sh` - mapping metrics, main script
-
-Directory `examples` contains sample JSKOS data and expected metric results to test the metric scripts. Call `make` to run the tests.
-
-### JSON format
-
-The concept-metrics file contains the following keys:
+Metrics of concepts contain the following keys:
 
 * `keys` - histogram of JSKOS field names
 * `conceptNumber` - total number of concepts
@@ -33,7 +33,7 @@ The concept-metrics file contains the following keys:
 * `typeDistribution` - histogram of concept type URIs
 * `levelDistribution` - histogram of concepts per hierarchy level
 
-The mapping-metrics file contains the following keys:
+Metrics of mappings contains the following keys:
 
 * `keys` - histogram of JSKOS field names
 * `fromSchemeDistribution` - histogram of source scheme URIs
@@ -49,17 +49,23 @@ The mapping-metrics file contains the following keys:
 * `toConceptsCount` - number of distinct target concepts
 * `mappingURICount` - number of mapping uris
 
-### Examples
+## Implementation
+
+Each metric id calculated with a script of its own. Each item type has a main script that executes its scripts and emits a JSON file:
+
+* `concepts/concept-metrics.sh` - concept scheme metrics, main script
+* `mappings/mapping-metrics.sh` - mapping metrics, main script
+
+Run `make` to execute `jskos-metrics` with examples as unit test.
+
+## Examples
 
 Directory `examples` contains sample files which are also used for testing.
 
+~~~sh
+./jskos-metrics concepts examples/concepts.ndjson
+./jskos-metrics mappings examples/mappings.ndjson
 ~~~
-./concepts/concept-metrics.sh examples/concept-expect.json | jq
-
-./mappings/mapping-metrics.sh examples/mapping-expect.json | jq
-~~~
-
-In this case jq is only needed for pretty-printing.
 
 ## Related work
 
