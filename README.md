@@ -11,7 +11,7 @@ You need to clone the repository or copy its content to a local directory.
 
 The scripts require [jq](https://stedolan.github.io/jq/) and standard Unix command line tools (bash, sort, uniq, perl...).
 
-To call the main script `jskos-metrics` from anywhere, add a symlink from a directory in your PATH, e.g.:
+To call the main script `jskos-metrics` from anywhere, add a symlink from a directory in your `$PATH`, e.g.:
 
 ~~~sh
 cd ~/.local/bin/

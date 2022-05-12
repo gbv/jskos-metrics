@@ -30,9 +30,9 @@ if [ ! -f "$2" ]; then
 fi
 
 if [ "$1" == "concepts" ]; then
-  "$DIR"/concepts/concept-metrics.sh "$2" | jq
+  "$DIR"/concepts/concept-metrics.sh "$2" | jq .
 elif [ "$1" == "mappings" ]; then
-  "$DIR"/mappings/mapping-metrics.sh "$2" | jq
+  "$DIR"/mappings/mapping-metrics.sh "$2" | jq .
 else
   usage
 fi
