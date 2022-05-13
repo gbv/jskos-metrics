@@ -5,6 +5,8 @@
 
 > Scripts to create statistical analysis of JSKOS data
 
+See https://observablehq.com/@nichtich/jskos-metrics for a demo.
+
 ## Installation
 
 You need to clone the repository or copy its content to a local directory.
@@ -66,6 +68,9 @@ Directory `examples` contains sample files which are also used for testing.
 ./jskos-metrics concepts examples/concepts.ndjson
 ./jskos-metrics mappings examples/mappings.ndjson
 ~~~
+
+More example results are include in the [jskos-data](https://github.com/gbv/jskos-data) collection of vocabulary data and their data visualization at
+https://observablehq.com/@nichtich/jskos-metrics.
 
 ## Related work
 
